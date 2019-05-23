@@ -1,0 +1,11 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model EFQuestion.Models.UserLogin
+@*@model List<EFQuestion.Models.UserLogin>*@
+
+@*@foreach (var item in Model)
+	{*@
+@*<h2>Welcome @item.Name , @item.Email!!! :D</h2>
+	}*@
+
+<h2>Welcome @Model.Name , @Model.Email!!! :D</h2>

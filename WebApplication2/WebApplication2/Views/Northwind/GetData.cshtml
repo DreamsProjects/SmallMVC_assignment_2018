@@ -1,0 +1,17 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using WebApplication2.Models
+@model List<Products>
+	<style>		
+		body {
+			background-color:blue;
+		}
+	</style>
+<div>
+	@foreach (var item in Model)
+	{		
+	<h1>Produkt: @item.ProductName</h1>
+	<h3>Antal i lager: @item.UnitsInStock</h3>
+<h3>Id: @item.CategoryId</h3>
+	<h3>Kostnad: @item.UnitPrice</h3>
+	}
+</div>

@@ -1,0 +1,29 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model WebApplication2.Models.News
+@*Strongly Typed View*@
+
+<!doctype html>
+<html>
+<head>
+	<style>
+		#div1 {
+			background-color: gray;
+			width: 300px;
+			height: auto;
+		}
+
+		#sent {
+			margin-left: 350px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="div1">
+		<h2>@Model.Headline</h2>
+		<p>@Model.NewsText</p>
+		<hr />
+	</div>
+	<a asp-action="NewsDetails">Tillbaka till nyheter</a>
+</body>
+</html>

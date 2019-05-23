@@ -1,0 +1,27 @@
+﻿@model List<EFQuestion.Models.UserLogin>
+@*@addTagHelper * , Microsoft.AspNetCore.Mvc.AddTagHelper*@
+
+<table>
+	<thead>
+		<tr>
+			<th>Name: </th>
+			<th>Email: </th>
+			<th>City: </th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Name</td>
+				<td>@item.Email</td>
+				<td>@item.City</td>
+				<td><a asp-action="Update" asp-route-id="@item.UserID">Update</a></td>
+				<td><a asp-action="Delete" asp-route-id="@item.UserID">Delete</a></td>
+			</tr>
+		}
+	</tbody>
+</table>

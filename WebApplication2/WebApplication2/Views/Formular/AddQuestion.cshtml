@@ -1,0 +1,60 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using WebApplication2
+
+@model WebApplication2.Models.Question
+
+<style>
+	div {
+		background-color: lightgrey;
+		width: 500px;
+		height:80px;
+	}
+
+	#ide {
+		width: 200px;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+
+	#question {
+		width: 400px;
+		height:100px;
+	}
+	#check {
+		float: right;
+	}
+
+	#color {
+		background-color: orange;
+		color: white;
+		float: right;
+	}
+
+	#right {
+	float:right;
+	}
+
+</style>
+
+		<div>
+			<form asp-action="AddQuestion" asp-controller="Formular" method="post">
+				<h4 style="color:gray;">Please <b>fill</b> out the following information.</h4>
+				<input asp-for="Email" placeholder="Enter Email" />
+				<div>
+					<textarea asp-for="QuestionText" placeholder="I am asking a question on this community."></textarea>
+					<br />
+				</div>
+				<div>
+					<h4 style="color:gray;" id="right">
+						Share on:
+						<input id="check" type="checkbox" value="FB" />
+						<input id="check" type="checkbox" value="TW" />
+						<input id="color" type="submit" value="Post" />
+					</h4>
+				</div>
+			</form>
+		</div>
+
+
+

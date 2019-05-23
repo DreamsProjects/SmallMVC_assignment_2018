@@ -1,0 +1,20 @@
+﻿
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="~/css/StyleSheet.css" />
+
+</head>
+<body>
+	<h2>Lista med saker</h2>
+
+	<ul>
+		@foreach (var Items in ViewBag.Names)
+		{
+			<li class="a">@Items</li>
+		}
+	</ul>
+</body>
+</html>

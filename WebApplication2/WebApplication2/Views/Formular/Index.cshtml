@@ -1,0 +1,79 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using WebApplication2
+
+@model WebApplication2.Models.RegisterViewModel
+
+<style>
+	.row {
+		background-color: lightgrey;
+		width: 500px;
+		height: 300px;
+	}
+
+	.col-md-4 {
+		width: 450px;
+	}
+
+	h2 {
+		color: orange;
+	}
+
+	#button {
+		background-color: orange;
+		color: white;
+	}
+
+	#smaller {
+		width: 290px;
+		float: left;
+		display: block;
+	}
+
+
+	#larger {
+		width: 400px;
+	}
+</style>
+
+<div class="row">
+	<div class="col-md-4">
+		<h2>NEW USER REGISTER HERE</h2>
+		<form asp-action="Register" method="post">
+
+			<h4>Please <b>fill</b> out the following information</h4>
+			<div class="form-group">
+				<input type="text" placeholder="Enter Email:" id="larger" />
+				<span asp-validation-for="Register.Email"></span>
+			</div>
+			<div class="form-group" id="smaller">
+				<input type="text" placeholder="First Name:" />
+				<span asp-validation-for="Register.FirstName"></span>
+			</div>
+			<div id="small">
+				<input type="text" placeholder="Last Name:" />
+				<span asp-validation-for="Register.LastName"></span>
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Enter Password:" id="larger" />
+				<span asp-validation-for="Register.Losenord"></span>
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Enter Confirm Password:" id="larger" />
+				<span asp-validation-for="Register.ConfirmLosenord"></span>
+			</div>
+			<div>
+				<select asp-for="Register.Country" asp-items=@Model.Country></select>
+			</div>
+			<select asp-for="Register.UserType" asp-items=@Model.UserType></select>
+
+
+			<div class="form-group">
+				<input type="checkbox" />
+				<span asp-validation-for="Register.Want">Send me important updates</span>
+			</div>
+			<input id="button" type="submit" value="REGISTER ME" />
+		</form>
+	</div>
+</div>
+

@@ -1,0 +1,74 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using WebApplication2.Models
+
+@model List<News>
+
+<style>
+	#change {
+		background-color: orange;
+		border: groove, thick;
+		border-color: black;
+	}
+
+	#right {
+		margin-left: 5px;
+		width: 200px;
+	}
+
+	#display {
+		width: 500px;
+	}
+
+	li {
+		list-style-type: none;
+	}
+
+	#meny {
+		border-left: dotted;
+		border-right: dotted;
+		border-top: dotted;
+		border-bottom: dotted;
+		border-color: black;
+	}
+
+	#populate {
+		width: 250px;
+	}
+</style>
+
+<div id="meny">
+	<div id="change">Nyheter - @Model.Select(x => x.Kategori.Namn) 2018-01-25</div>
+	<div id="right">
+		@foreach (var item in Model)
+		{
+			<ul>
+				<li>
+					<a asp-action="Clicked" asp-route-id=@item.Kategori.Id>@item.Kategori.Namn</a>
+				</li>
+			</ul>
+		}
+	</div>
+	<div id="display">
+		<hr />
+		@foreach (var item in Model)
+		{
+			<ul>
+				<li>@item.Headline</li>
+				<li>@item.NewsText</li>
+			</ul>
+			<hr />
+		}
+	</div>
+
+	<div id="populate">
+		Populära nyheter:
+		@foreach (var item in Model)
+		{
+			<ul>
+				<li>@item.Headline</li>
+			</ul>
+		}
+	</div>
+
+</div>

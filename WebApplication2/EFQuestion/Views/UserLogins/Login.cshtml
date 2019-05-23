@@ -1,0 +1,26 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using EFQuestion
+
+@model EFQuestion.Models.UserLogin
+
+<div style="border-style:solid; border-color:orange; height:130px; width:300px;">
+	<form asp-action="Login" method="post">
+		<div>
+			<label style="margin-top:10px;">Email:</label>
+			<input asp-for="Email" type="text"  style=" margin-top:10px; margin-left:25px;" placeholder="Enter Email or UserID"/>
+		</div><br/>
+		<div>
+			<label>Password:</label>
+			<input asp-for="Password" type="password" placeholder="Enter Password" />
+		</div>
+		<div>
+			<input type="checkbox" style="float:left; margin-top:5px; margin-left:70px;"/><div style="margin-left:25px;">Remember me</div>
+		</div>
+		<div>
+			<input type="submit" value="Login" style="color:white;background-color:orange; border-color:orange; margin-top:5px;"/>
+			<a style="color:orange; font-size:18px;">Forgot password?</a>
+			<hr />
+		</div>
+	</form>
+</div>

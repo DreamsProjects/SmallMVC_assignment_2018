@@ -1,0 +1,12 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using WebApplication2.Models
+@model List<Products>
+
+<div>
+	@foreach (var items in Model)
+	{
+		<h3>Produktnamn: @items.ProductName</h3>
+		<h3>Pris: @items.UnitPrice</h3>
+		<h3>Antal i lager: @items.UnitsInStock</h3>
+	}
+</div>

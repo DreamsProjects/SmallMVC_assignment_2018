@@ -1,0 +1,11 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using WebApplication2.Models
+@model List<Categories>
+
+
+<div>
+	@foreach (var items in Model)
+	{
+		<a asp-action="Choosen" asp-controller="Northwind" asp-route-id=@items.CategoryId>@items.CategoryName</a>
+	}
+</div>

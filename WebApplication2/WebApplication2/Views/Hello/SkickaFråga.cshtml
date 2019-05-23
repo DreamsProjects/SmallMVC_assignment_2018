@@ -1,0 +1,36 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!doctype html>
+<html>
+<head>
+	<style>
+		#div1 {
+			background-color: gray;
+			width: 465px;
+			height: 270px;
+		}
+
+		#text {
+			font-size: 14px;
+			width: 450px;
+			height: 200px;
+			margin-left: 5px;
+			text-align: left;
+			vertical-align: central;
+		}
+
+		#sent {
+			margin-left: 350px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="div1">
+		<p>Skriv din fråga här:</p>
+		<textarea id="text">
+		</textarea>
+		<a asp-action="TackFråga" id="sent">Skicka fråga</a>
+	</div>
+</body>
+</html>
